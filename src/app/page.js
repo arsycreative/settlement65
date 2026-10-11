@@ -119,7 +119,7 @@ export default function HomePage() {
               }}
             >
               Welcome to the{" "}
-              <span className="text-gold-gradient">Final Settlement65</span>
+              <span className="text-gold-gradient hero-gold-text">Final Settlement65</span>
               {" "}Portal
             </h1>
 
