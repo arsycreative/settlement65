@@ -1,0 +1,59 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_VERSION = "10"
+  NETLIFY_COLLAB_TOOLS = "false"
+  NETLIFY_DRAWER = "false"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/s65-hero-dark.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/s65-hero-light.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/s65-comm-bg.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/s65-logo.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "http://settlement65.com/*"
+  to = "https://settlement65.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.settlement65.com/*"
+  to = "https://settlement65.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.settlement65.com/*"
+  to = "https://settlement65.com/:splat"
+  status = 301
+  force = true

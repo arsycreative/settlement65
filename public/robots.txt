@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://settlement65.com/sitemap.xml
